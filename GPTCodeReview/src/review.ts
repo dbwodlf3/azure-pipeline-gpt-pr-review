@@ -108,32 +108,6 @@ export async function reviewFile(input: {
 
     choices = res.choices;
 
-    // if (input.aoi.commentLanguage == "ko") {
-    //   const msg = [
-    //     {
-    //       role: "system",
-    //       content:
-    //         "사용자로부터 입력이 들어오면, 해당 입력을 한국어로 번역 해 주세요.",
-    //     },
-    //     {
-    //       role: "user",
-    //       content: choices[0].message?.content,
-    //     },
-    //   ];
-
-    //   const res = await chatGPT({
-    //     endpoint: input.aoi.aoiEndpoint,
-    //     resourceModelId: resourceId,
-    //     apiKey: input.aoi.apiKey,
-    //     msg: msg,
-    //     options: {
-    //       filename: `<trnslate> ${input.fileName}`,
-    //     },
-    //   });
-
-    //   choices = res.choices;
-    // }
-
     if (choices && choices.length > 0) {
       const review = choices[0].message?.content as string;
 
