@@ -80,13 +80,11 @@ async function run() {
       });
     }
 
-    tl.setResult(
-      tl.TaskResult.Succeeded,
-      `Pull Request reviewed. 
+    console.log(`
     total files: ${filesNames.length}
-    total tokens: ${ReviewManager.getTotalUsage()}
-    `
-    );
+    total tokens: ${ReviewManager.getTotalUsage()}`);
+
+    tl.setResult(tl.TaskResult.Succeeded, `Pull Request reviewed.`);
   } catch (err: any) {
     tl.setResult(tl.TaskResult.Failed, err.message);
   }
