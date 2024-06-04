@@ -1,5 +1,17 @@
 This Project is forked from https://github.com/mlarhrouch/azure-pipeline-gpt-pr-review
 
+### Build Hints
+
+tfx extension --create --manifest-globs ./vss-extension.json
+
+npm run build
+
+modify, vss-extension and task.json
+
+### References
+
+https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-build-task?view=azure-devops
+
 ---
 
 # Use OpenAI GPT model to review Pull Requests for Azure Devops
