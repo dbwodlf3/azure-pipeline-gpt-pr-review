@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "OAICodeReview",
     "name": "GPT Code Review",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "publisher": "JaeilYu",
     "galleryFlags": [
         "Public",

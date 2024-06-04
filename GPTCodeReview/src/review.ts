@@ -46,10 +46,10 @@ export async function reviewFile(input: {
 
   let instructions = prompts["en"];
 
-  const patchLimit = ReviewManager.reviewOptions?.git?.patchLimit;
-  const tokenLimit = ReviewManager.reviewOptions?.aoi?.tokenLimit;
+  const patchLimit = ReviewManager.reviewOptions.git.patchLimit;
+  const tokenLimit = ReviewManager.reviewOptions.aoi.tokenLimit;
 
-  if (patchLimit && patchLimit < patch.length) {
+  if (patchLimit < patch.length) {
     await addCommentToPR(
       input.fileName,
       `Skip AI Review, This file over patchLimit: ${patchLimit}`,
@@ -59,7 +59,7 @@ export async function reviewFile(input: {
     return;
   }
 
-  if (tokenLimit && tokenLimit < ReviewManager.getTotalUsage()) {
+  if (tokenLimit < ReviewManager.getTotalUsage()) {
     await addCommentToPR(
       input.fileName,
       `Skip AI Review, This over GPT Token Limit: ${tokenLimit}`,

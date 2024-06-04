@@ -41,6 +41,15 @@ async function run() {
       ReviewManager.reviewOptions.git.patchLimit = parseInt(gitPatchLimit);
     }
 
+    // Print out the task infos
+    console.log(`Process.env.NODE_ENV=${process.env.NODE_ENV}`);
+    console.log(
+      `AOI Token Limit: ${ReviewManager.reviewOptions.aoi.tokenLimit}`
+    );
+    console.log(
+      `Git Patch Limit: ${ReviewManager.reviewOptions.git.patchLimit}`
+    );
+
     const httpsAgent = new https.Agent({
       rejectUnauthorized: !supportSelfSignedCertificate,
     });

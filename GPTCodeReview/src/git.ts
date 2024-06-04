@@ -5,7 +5,6 @@ import { getFileExtension } from "./utils";
 
 const baseDir = (() => {
   let result = "";
-  console.log("process.env.NODE_ENV==", process.env.NODE_ENV);
 
   if (process.env.NODE_ENV != "test") {
     result = `${tl.getVariable("System.DefaultWorkingDirectory")}`;

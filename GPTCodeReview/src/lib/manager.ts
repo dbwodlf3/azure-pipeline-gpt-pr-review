@@ -18,10 +18,10 @@ interface IReviewManager {
   };
   reviewOptions: {
     git: {
-      patchLimit?: number;
+      patchLimit: number;
     };
     aoi: {
-      tokenLimit?: number;
+      tokenLimit: number;
     };
   };
 }
@@ -40,10 +40,10 @@ export const ReviewManager: IReviewManager = {
   },
   reviewOptions: {
     git: {
-      patchLimit: undefined,
+      patchLimit: 2048,
     },
     aoi: {
-      tokenLimit: undefined,
+      tokenLimit: 20000,
     },
   },
 };
