@@ -120,17 +120,15 @@ export async function reviewFile(input: {
       console.log("Review End");
       console.log("====================================");
 
-      if (review.trim() !== "No feedback.") {
-        if (process.env.NODE_ENV == "test") {
-          return {
-            fileName: input.fileName,
-            review,
-            httpsAgent: input.httpsAgent,
-          };
-        } else {
-          await addCommentToPR(input.fileName, review, input.httpsAgent);
-          return;
-        }
+      if (process.env.NODE_ENV == "test") {
+        return {
+          fileName: input.fileName,
+          review,
+          httpsAgent: input.httpsAgent,
+        };
+      } else {
+        await addCommentToPR(input.fileName, review, input.httpsAgent);
+        return;
       }
     }
     /** END AI Review */
